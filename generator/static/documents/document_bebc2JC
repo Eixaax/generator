@@ -1,0 +1,248 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title><style>table { border-collapse: collapse; width: 100%; } .h3 {font-family: 'Times New Roman', Times, serif; font-size: 2rem; color: black; text-align: center; } th, td { border: 1px solid black; padding: 8px; text-align: left; } th { text-align: center;} .headers {text-align: center;} .header2 {text-align: end; display: flex; justify-content: end; } </style></head><body>
+      <div class="headers" id="headers">
+          Republic of the Philippines <br>
+          Western Mindanao State University<br>
+          COLLEGE OF SOCIAL WORK AND COMMUNITY DEVELOPMENT<br>
+          Normal Rd, Baliwasan, Zamboanga City
+          <br>
+          <br>
+      </div>
+  
+      <div class="header2" id="header2">
+        <p>Date: 2024-04-28<br>
+        Case no. 9</p>
+      </div>
+  
+      <div class="h3" id="h3">
+          SOCIAL CASE STUDY REPORT
+          <br>
+      </div>
+  
+      <div class="body" id="body">
+        <p>
+        A. Identifying Information<br>
+          <br>
+        Name of client : Mary Jane F Cariage <br> 
+        Date of birth : 2003-07-13<br> 
+        Sex/Gender : Male<br> 
+        Marital status : Divorced<br> 
+        Educational attainment : Tertiary<br> 
+        Means of income : Engineering<br> 
+        Estimated monthly income : 30,000 - 70,000<br>
+        Presenting problem : insomnia
+      </p>
+        
+        <p>B. Family Composition</p>
+        <table>
+          <tbody><tr>
+            <th>Name</th>
+            <th>Relationship to Household</th>
+            <th>Birthdate</th>
+            <th>Sex/Gender</th>
+            <th>Marital Status</th>
+            <th>Educational Attainment</th>
+            <th>Employment</th>
+            <th>Estimated monthly income</th>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody></table>
+        <p>C. Background information </p>
+
+<p>Note: discussed the following in this part:<br>The client, client’s family, parents, children, siblings if applicable <br>Significant others (if important or related to client’s problem/situation <br>Client’s environment (neighborhood, community: physical, social characteristics, etc.)</p>
+
+<p>D. Underlying of Problem</p>
+
+<p>The causes of the problem, why it happens, what are the solutions executed by the client, what are the reasons why that particular solution was not effective. </p>
+
+<p>E. Helping Goals ( the “ends” desired example, it is write as to be achieved at the end of the helping relationship)</p>
+
+<p>At the end of the working relationship, the worker and client will be able to:</p>
+
+<p>1. Look for an alternative means of earning <br>2. Refer client for possible employment <br>3. Contact significant others that could temporarily assist the client in his or her current situation.</p>
+
+<p>F. Action Plan (the “means” to achieve the defined goals, example specific interventions, activities, task that have to be done to achieve the goals) follow the format below:<br></p>
+        <div contenteditable="true" class="plan" id="plan">
+          <p>
+            </p><p>Associated Problem 1: Insomnia<br>Interventions: </p>
+
+<p>1. Practice good sleep hygiene: Establish a consistent sleep schedule, stick to a relaxing bedtime routine, and create a comfortable sleep environment. </p>
+
+<p>2. Avoid stimulants: Reduce intake of caffeine and other stimulants, especially in the evening. </p>
+
+<p>3. Mindfulness and relaxation techniques: Explore practices such as meditation, deep breathing, or progressive muscle relaxation to help unwind before sleep. </p>
+
+<p>4. Exercise regularly: Engage in regular physical activity, preferably earlier in the day, to promote overall health and improve sleep quality. </p>
+
+<p>5. Consider cognitive behavioral therapy (CBT): Consult with a qualified professional for CBT to address any underlying psychological factors contributing to insomnia. </p>
+
+<p>Activities: </p>
+
+<p>1. Maintain a consistent sleep schedule: Go to bed at the same time each day and set an alarm for the same time each morning. </p>
+
+<p>2. Create a relaxing bedtime routine: Engage in relaxing activities before bed, such as reading or listening to soothing music. Avoid screens for at least one hour before bedtime. </p>
+
+<p>3. Practice meditation or deep breathing: Set aside time for meditation or deep breathing exercises to help relax the body and calm the mind. </p>
+
+<p>4. Exercise regularly: Engage in at least 30-60 minutes of moderate to vigorous activity, such as brisk walking, jogging, or any physical activity of choice. Ensure exercise is completed at least one hour before bedtime. </p>
+
+<p>5. Consider professional help: Research psychologists or therapists who specialize in sleep disorders and Insomnia to initiate counseling or therapy if the problem persists. </p>
+
+<p>Resources Needed: </p>
+
+<p>1. Availability and commitment to establishing and maintaining a consistent sleep schedule. </p>
+
+<p>2. Willingness to engage in research and experimentation with different relaxation techniques to find what works best. </p>
+
+<p>3. Access to educational materials, online resources, and/or consulting with healthcare professionals for guidance. </p>
+
+<p>Expected Outcome: </p>
+
+<p>1. Improved sleep duration and quality, with a decrease in the time taken to fall asleep. </p>
+
+<p>2. Greater sense of relaxation and reduced anxiety levels before and during the sleep process. </p>
+
+<p>3. Improved overall health and well-being through regular exercise and effective stress management. </p>
+
+<p>4. Reduced insomnia symptoms and improved daily performance and quality of life. </p>
+
+<p>Associated Problem 2: Lack of Energy<br>Interventions: </p>
+
+<p>1. Nutrition and dietary adjustments: Analyze diet and ensure a balanced intake of nutrients, including complex carbohydrates, protein, and healthy fats. Consider adding a multivitamin to the diet. </p>
+
+<p>2. Regular exercise: Engage in regular exercise, ideally in the morning, to increase energy levels and promote overall well-being. Find an exercise activity that is enjoyable like walking, swimming, or dancing. </p>
+
+<p>3. Manage stress: Develop stress management strategies, such as setting realistic goals, prioritizing tasks, and employing deep breathing or other relaxation techniques to alleviate stress and recharge. </p>
+
+<p>4. Consider medical conditions: Consult with a general practitioner or healthcare professional to rule out any underlying medical conditions causing chronic fatigue. </p>
+
+<p>Activities: </p>
+
+<p>1. Maintain a balanced diet: Ensure each meal contains a portion of fruits and vegetables, whole grains, lean protein, and healthy fats. Keep a food diary if needed, to track nutritional intake. </p>
+
+<p>2. Adjust diet based on nutrition needs: Include complex carbohydrates for slow-release energy and avoid big meals close to bedtime. </p>
+
+<p>3. Exercise for at least 20-30 minutes a day: Whether it's walking, cycling, or any other enjoyable physical activity. </p>
+
+<p>4. Manage stress: Learn to say no to commitments, avoid unrealistic deadlines, and take short breaks to recharge throughout the day. Set aside at least 15 minutes a day for relaxation practice. </p>
+
+<p>Resources Needed: </p>
+
+<p>1. Accessibility to a variety of nutritious food options and possibly a nutrition plan tailored to the client's needs. </p>
+
+<p>2. Budget or insurance coverage for potential consultation with a dietician or healthcare professional. </p>
+
+<p>3. Access to a supportive community or online resources for guidance on stress management techniques. </p>
+
+<p>Expected Outcome: </p>
+
+<p>1. Increased energy levels and a more vibrant daily function.</p>
+
+<p>2. Improved ability to accomplish daily tasks and perform up to potential at work/school. </p>
+
+<p>3. Reduced feelings of exhaustion and increased overall motivation and well-being. </p>
+
+<p>Let me know if you would like to address any other problems!</p>
+          <p></p>
+        </div>
+        
+
+            <div class="assessment" id="assessment">
+              <p>
+                G. Assessment (narrative form)<br>
+
+                  1. Capacity to change on the part of the client<br>
+                  2. Hindering factors in achieving the goal<br>
+                  3. Facilitating factors that could help you and your client achieve your working goals. <br>
+                  4. Possible other problem based from the problem presented.<br>
+
+              </p>
+            </div>
+
+            <div class="recommendation" id="recommendation">
+              H. Recommendation (state further the needs for improvement in the working relationship)<br><br>
+              The worker therefore recommend the following: 
+              <p>
+                </p><p>Here is a general recommendation for the person with presenting problems of insomnia, lack of energy, and stress: </p>
+
+<p>1. Assess and Address Acute Causes of Insomnia and Stress: The person should prioritize identifying any immediate stressors or reasons for their insomnia. They should assess if there are any imminent personal or professional life challenges, outstanding personal or work-related obligations, or any other urgent matters that may be causing or contributing to their insomnia and stress. </p>
+
+<p>2. Practice Good Sleep Hygiene: Following good sleep hygiene practices is essential for improving sleep quality. This includes having a pre-sleep routine that prepares your body and mind for a restful night, such as limiting screen time before bed, keeping your room cool, dark, and quiet, and avoiding stimulating activities close to bedtime. </p>
+
+<p>3. Adjust Sleep Schedules: To facilitate a quicker fall asleep and improve sleep duration, evaluate their current sleep schedule and try to adhere to a consistent sleep and wake-up time, even on weekends. Gradually adjust their bedtime and wake time, aiming for a schedule that allows for 7-9 hours of sleep at night. </p>
+
+<p>4. Manage Stress and Anxiety: Explore different manageable techniques to help combat stress and promote relaxation. Techniques such as deep breathing exercises, meditation, progressive muscle relaxation, and mindfulness can help the person reduce pre-sleep anxiety and improve the quality of their sleep. </p>
+
+<p>5. Light Therapy and Daytime Exposure to Natural Light: Considering the association between exposure to sunlight or bright daylight and the body's circadian rhythm, the individual should aim to spend timely daylight hours outdoors, exercise outdoors, or utilize a light therapy fixture as a supplementary light source. </p>
+
+<p>6. Evaluate Diet and Dietary Supplements: In collaboration with a medical professional, evaluate their diet and nutritional habits. Certain dietary choices may disrupt sleep, while others can potentially support a healthy sleep cycle. Likewise, while avoiding stimulant substances, one should carefully examine any herbal or over-the-counter supplements that may promote sleep and evaluate them for potential side effects and interactions. </p>
+
+<p>7. Physical Exercise: Incorporating consistent, manageable exercise, such as brisk walking, yoga, jogging, or other aerobic activities, into their daily routine can help promote sleepiness at night and alleviate stress. </p>
+
+<p>8. Cognitive Behavioral Therapy: Consider exploring cognitive-behavioral therapy (CBT) with a licensed practitioner. CBT helps to identify and challenge negative thoughts and behaviors that affect sleep. </p>
+
+<p>9. Medical Intervention: If the problems persist, despite attempting these interventions, it is important to consult a medical doctor, as some cases of insomnia may be caused by an underlying condition, or may require further examination to determine if pharmacological intervention is right for you. </p>
+
+<p>Remember, this is not a substitute for medical consultation, whereby a detailed history and personalized management options will be provided.</p>
+              <p></p>
+              <br>
+            </div>
+
+            <div class="prep" id="prep">
+              <p>
+                Prepared by:<br>
+                isa<br>
+              </p>
+            </div>
+              <button type="button" onclick="Export2Doc('content', 'test', '35');">EXPORT</button>
+              <input type="hidden" name="csrfmiddlewaretoken" value="Y5piCvLAa2f5fEtGXaGn3qO74rkMPmyqZf4ecuxRdkeCc2ypXjkCwrKwLyQB3VUs">
+          </div>
+        </body></html>

@@ -1,0 +1,363 @@
+.header{
+    width: calc(100%);
+}
+
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.infos .box1 .info-boxes{
+    width: 100%
+}
+
+.infos .box1 .info-boxes:not(:last-child) {
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+}
+
+.infos .box1{
+    display: flex;
+    flex-direction: column;
+}
+
+.charts {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.charts .bar{
+    padding: 0;
+}
+
+.charts .all-pies {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.charts .all-pies .pies1, .charts .all-pies .pies2{
+    gap: 0.3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.charts .all-pies .first, .charts .all-pies .second{
+    padding: 0;
+}
+
+.charts .all-pies .pies1, .charts .all-pies .pies2{
+    width: 100%;
+}
+
+.charts .all-pies .pies1 .first, 
+.charts .all-pies .pies1 .second,
+.charts .all-pies .pies2 .first,
+.charts .all-pies .pies2 .second{
+    width: 49% ;
+}
+
+@media (min-width: 720px) {
+
+    .dashboard-container{
+        width:80%;
+        margin:auto;
+    }
+    .infos .box1{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .infos .box1 .info-boxes:not(:last-child) {
+        border-bottom: none;
+    }
+    .infos .box1 .info-boxes{
+        width: 30%;
+    }
+}
+
+@media (min-width: 1080px) {
+    .dashboard-container{
+        font-size: 1.8rem;
+    }
+}
+
+
+/* filter */
+.filter{
+    font-size: 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.filter .new{
+    padding: 1em;
+}
+
+.filter .infos{
+    margin: 0;
+}
+
+.filter .new .right-button{
+    justify-content: start;
+}
+
+.filter .new .dropdown-content{
+    width: 100%
+}
+
+.filter .new .right-button .form-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-button .form-box select{
+    width: 85%;
+}
+
+.right-button i{
+    display: flex;
+    align-items: center;
+}
+
+.filter .infos .filter-all-pies{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter .infos .filter-all-pies .pie-container-custom{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+}
+
+.filter .infos .filter-all-pies{
+    height: auto;
+}
+
+.filter .infos .filter-all-pies .pie-container-custom .pie{
+    height: 200px !important;
+    max-height: 200px;
+}
+
+.filter .infos .pies4{
+    height: 800px;
+}
+
+.filter .infos .pies4 canvas{
+    height: 200px;
+}
+
+.filter .infos .filter-bar{
+    height: 200px;
+}
+
+.filter .infos .filter-bar2{
+    height: 500px;
+    gap: 1em;
+}
+
+@media (min-width: 480px){
+
+
+    .filter .infos .filter-all-pies .pie-container-custom .pie{
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width: 720px){
+    .filter{
+        width:80%;
+        margin:auto;
+    }
+
+    .filter .infos .pies4{
+        flex-direction: row;
+        height: 400px;
+    }
+
+    .filter .infos .filter-bar {
+        height: 460px;
+    }
+
+    .filter .infos .filter-chart-box {
+        gap: 1em;
+    }
+}
+
+/* admin popup responsive */
+.modal .modal-content1{
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.content form .header2{
+    flex-direction: row;
+    justify-content: center;
+}
+.content form .header2 p{
+    text-align: center;
+}
+
+.content form .header2 p input{
+    width: 1.5rem;
+}
+
+.content .info .name h1{
+    text-align: center;
+}
+
+.content .info .name .client{
+    flex-direction: column;
+}
+
+.content .info .name .client .full-name label{
+    margin-top: 0;
+}
+
+.content .info .client-info1{
+    flex-direction: column;
+    max-width: 1040px;
+}
+
+.content .info .client-info2 .cinfo{
+    flex-direction: column;
+}
+
+.content .info .problemos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.content .info .problemos .problemos-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 720px){
+    .content form .header2{
+        justify-content: end;
+    }
+
+    .content .info .name .client{
+        flex-direction: row;
+    }
+
+    .content .info .client-info1{
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        gap: 2em;
+    }
+    .modal .modal-content1{
+        max-height: 90%;
+        max-width: 90%;
+    }
+    .content .info .client-info2{
+        justify-content: start;
+    }
+
+    .content .info .client-info2 .cinfo{
+        flex-direction: row;
+    }
+
+    .content .info .client-info2 .cinfo p{
+        margin-left: 1em;
+    }
+
+    .content .info .problemos{
+        align-items: start;
+        margin: 0;
+    }
+
+    .content .info .problemos .problemos-items{
+        flex-direction: row;
+    }
+    
+    
+}
+
+
+/* register user (admin) */
+.create .admin-info form{
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+.create .admin-info form .img-cir{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+}
+
+.create .admin-info form .img-cir img{
+    height: 100px;
+    width: 100px;
+}
+
+.create .admin-info form .img-cir input{
+    max-width: 220px;
+    width: 100%;
+}
+
+.create .admin-info form .user-info .text-field input{
+    width: 100%;
+}
+
+@media (min-width:480px) {
+    .manage .modal .user-create-modal{
+        max-width: 420px;
+        max-height: 600px;
+    }
+}
+
+
+/* profile */
+
+.profile .user-profile{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile .user-profile .profile-pic {
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+}
+
+.profile .user-profile .profile-pic img{
+    width: 100%;
+    max-width: 50px;
+}
+
+.profile .user-profile .user-profile-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%
+}
+
+.profile .user-profile .user-profile-info input ,
+.profile .user-profile button{
+    max-width: 500px;
+    width: 100%;
+}
+

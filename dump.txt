@@ -1,0 +1,13 @@
+print(ranges)
+        
+        ranges = Ranges.objects.get(id=ranges)
+
+        range_names = ranges.ranges_name
+        range1s = ranges.range1
+        range2s = ranges.range2
+        data = {
+                'range_names': range_names,
+                'range1s':range1s,
+                'range2s':range2s
+        }
+        return JsonResponse(data)

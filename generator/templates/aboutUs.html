@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta namr="viewport" content="width=device-width,initial-scale=1.0">
+        <title>About Us</title>
+        <link rel="icon" href="{%static 'images/cswc.PNG'%}" type="image/x-icon">
+        <link href="{% static 'css/about.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+<body>
+    <header>
+        <div class="navbar">
+
+
+        <div class="logo"><a href="#"> </a> </div>
+                <ul class="links">
+                    <a href = "{% url 'landing' %}"><button class="home"> HOME<span></span></button> </a>
+                    <a href="#"><button class="about"> About Us<span></span></button> </a> 
+                    <a href=""><button class="contact"> Contact<span></span></button></a>
+                    <button class="btnLogin-popup"> Login</button>
+                </ul>
+
+</header>
+
+<section class = "context">
+    
+    <div class="sec"> 
+    <img src="{% static 'images/cswc.PNG' %}" class="cswc">
+    <img src="{% static 'images/wmsulogo.png' %}" class="wmsu">
+
+        <h1> WESTERN MINDANAO STATE UNIVERSITY</h1>
+        <h2> COLLEGE OF SOCIAL WORK & <br>COMMUNITY DEVELOPMENT</h2>
+        <h3>NORMAL ROAD, BALIWASAN, ZAMBOANGA CITY</h3>
+
+    </div>
+         <div class="wrapper">
+             <form action = "" class="form">
+             <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+             
+             <div class="form-box login">
+             
+             
+              <h2>login</h2>
+                 <div class="input-box">
+                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                     <input type="text"  id="email" required />
+                     <label for="email"> Email </label>
+                 </div>
+                 <div class="input-box">
+                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                     <input type="password" id="password" required />
+                     <label for="password">Password</label>
+                 </div>
+                 <div class="remember-forgot">
+                     <label><input type="checkbox">
+                         Remember me</label> 
+                         <a href="#">Forgot Password?</a>
+                 </div>
+                 <input type="submit" value="Login" class="btn" onclick="auth()" /> 
+                 <div class="login-register">
+                     <p>Don't have an account?
+                         <a href="#" class="register-link">Register</a>
+                     </p>
+                 </div>
+             </form>
+             </div>
+
+        
+             <div class="form-box register">
+                 <h2>Registration</h2>
+                 <form action = "#">
+                     <div class="input-box">
+                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                         <input type="text" required>
+                         <label>Username</label>
+                     </div>
+                    <div class="input-box">
+                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                     <input type="email" required>
+                     <label>Email</label>
+                 </div>
+                     <div class="input-box">
+                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                         <input type="password" required>
+                         <label>Password</label>
+                     </div>
+                     <div class="remember-forgot">
+                         <label><input type="checkbox">
+                            I agree to the terms and Conditions</label> 
+                     </div>
+                     <button type="submit" class="btn">Register</button>
+                     <div class="login-register">
+                         <p>Already have an account?
+                             <a href="#" class="login-link">Login</a>
+                         </p>
+                     </div>
+                 </form>
+                 </div>
+
+                 <div class="wrapper">
+                        <form action = "{% url 'login' %}" method = "post" class="form">
+                            {% csrf_token %}
+                            <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+                            
+                            <div class="form-box login">
+                            
+                            <h2>login</h2>
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                                    <input type="text" name = "username" id="username" required />
+                                    <label for="username"> username </label>
+                                </div>
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                                    <input type="password" name = "password" id="password" required />
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="remember-forgot">
+                                    <label><input type="checkbox">
+                                        Remember me</label> 
+                                        <a href="#">Forgot Password?</a>
+                                </div>
+                                <input type="submit" class="btn"> 
+                                <div class="login-register">
+                                    <p>Don't have an account?
+                                        <a href="#" class="register-link">Register</a>
+                                    </p>
+                                </div>
+                        </form>
+                    </div>
+            
+                    <div class="form-box register">
+                        <h2>Registration</h2>
+                        <form action = "{% url 'signup' %}" method = "post" class="form">
+                            {% csrf_token %}
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <input type="text" name = "username" required>
+                                <label>Username</label>
+                            </div>
+                           <div class="input-box">
+                            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                            <input type="email" name = "email" required>
+                            <label>Email</label>
+                        </div>
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                                <input type="password" name = "password" required>
+                                <label>Password</label>
+                            </div>
+                            <div class="remember-forgot">
+                                <label><input type="checkbox">
+                                   I agree to the terms and Conditions</label> 
+                            </div>
+                            <button type="submit" class="btn">Register</button>
+                            <div class="login-register">
+                                <p>Already have an account?
+                                    <a href="#" class="login-link">Login</a>
+                                </p>
+                            </div>
+                        </form>
+                        </div>
+            
+                        </div>
+                     
+</section>   
+     
+
+<section class = "content ">
+    <div class="abt"> 
+         <h1>ABOUT US</h1>
+     <p> 
+         Welcome to the College of Social Studies and Community Development,<br> where academic excellence meets a commitment to fostering positive<br> sociatal change. Our institution is dedicted to providing a transformative<br>
+ educational experience that empowers students to become compassionate<br> and eftective agents of social progress. Nestled in a vibrant academic <br>community, we strive to culvative a dynamic learning environment that <br> encourages critical thingking, collaboration of <br> practical skills essential for addressing the complex challenges facing our global community.
+     </p>
+ </div>
+ <div class="mission-vision">
+    <div class="mission">
+        <h1>MISSION</h1>
+        <p>
+            WMSU commits to create a vibrant atmosphere of learning where science, technology, innovation, research, the arts and humanities and community engagement flourish, and produce world-class professionals committed to sustainable development and peace.
+        </p>
+    </div>
+    <div class="vision"> 
+        <h1>VISION</h1>
+        <p>
+            By 2040, WMSU is a Smart Research University generating competent professionals and global citizens engendered by knowledge from the sciences and liberal education, empowering communities, promoting peace, harmony and cultural diversity.
+        </p>
+    </div>
+</div>
+ 
+ </div>
+ </div>
+ </section>
+ 
+ <div class="goals">
+     <h1>COLLEGE GOALS</h1>
+     <p>
+         a. To produce quality and competent social work and community development workers. <br>
+            b. To serve as a training ground for social workers and community development workers that will act as change agent in the transformation<br> and creation of empowered and interdependent communities.<br>
+            C. To maximize the potentials of faculty by offering master's degree courses in community development, gender, and development studies.<br>
+            d. To develop faculty development program whereby all faculty members would be encouraged to pursue/or finish higher education level.<br>
+            e. To continue the pursuit of accreditation of programs offered by the college.<br>
+            f. To develop learning and instructional materials that utilizes approaches that are relevant and appropriate to the present conditions.<br>
+     </p>
+ 
+ <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ <script src="script.js"></script>
+ 
+ </body>
+ 
+ </html>

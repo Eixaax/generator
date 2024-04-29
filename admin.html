@@ -1,0 +1,1019 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/7722bb96f2.js" crossorigin="anonymous"></script>
+        <link href="{% static 'css/Admin.css' %}" rel="stylesheet">
+        <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'images/admin.png' %}" type="image/x-icon">
+        <title>Admin Panel</title>
+    </head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="{% static 'images/admin.png' %}" alt=""> </div>
+    </header>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Admin Panel</span> </a>
+                <div class="nav_list"> 
+                    <a href="#" class="nav_link active"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
+                    <a href="#" class="nav_link"> <i class="fa-solid fa-filter"></i> <span class="nav_name">Filter</span> </a>
+                    <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> 
+                    <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
+                    <a href="#" class="nav_link"> <i class="fa-solid fa-gears"></i> <span class="nav_name">Settings</span> </a>
+                </div>
+            </div> 
+            <a href="{% url 'logout' %}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+        </nav>
+    </div>
+
+    <div class="dashboard-container height-100-bg-light">
+        
+        <div class="infos">
+            <h4>Dashboard</h4>
+                <div class="box1">
+                    <div class="info-boxes">
+                        <h1>Overall Cases</h1>
+                        <p>{{total_cases}}</p>
+
+                        <h1>Social Class with most Cases</h1>
+                        {% if most_common_est %}
+                            {% for estimated_income in most_common_est %}
+                                <p>{{estimated_income.estimated_income}}</p>
+                            {% endfor %}
+                        {% else %}
+                            <p>No Social Classes with most Cases found.</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-boxes">
+                        <h1>Barangay with most Cases</h1>
+                        {% if most_common_addresses %}
+                            {% for address in most_common_addresses %}
+                                <p>{{ address.address }}</p>
+                        {% endfor %}
+                        {% else %}
+                            <p>No addresses found.</p>
+                        {% endif %}
+                        <h1>Gender with most Cases</h1>
+                        <p>{{most_common_sex_value}}</p>
+                    </div>
+                    <div class="info-boxes">
+                        <h1>Age range with most Cases</h1>
+                        {% if most_common_ranges %}
+                            {% for range in most_common_ranges %}
+                                <p>{{range.range}}</p>
+                            {% endfor %}
+                        {% else %}
+                                <p>No ranges found.</p>
+                        {% endif %}
+                        <h1>type of Client with most Cases</h1>
+                            <p>{{common_type}}</p>
+                    </div>
+                </div>
+        </div>
+
+        <div class="charts">
+            <div class="bar">
+                <canvas id="address-bar" class="bar-pie"></canvas>
+            </div>
+            <div class="all-pies">
+                <div class="pies1">
+                    <div class="first">
+                        <canvas id="chart1" class="pie"></canvas>
+                    </div>
+                    <div class="second">
+                        <canvas id="chart2" class="pie"></canvas>
+                    </div>
+
+                </div>
+                <div class="pies2">
+                    <div class="first">
+                        <canvas id="chart3" class="pie"></canvas>
+                    </div>
+                    <div class="second">
+                        <canvas id="chart4" class="pie"></canvas>
+                    </div>
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="manage" style="display: none;">
+        <div id="modal1" class="modal">
+            <div class="modal-content1 user-create-modal" id = "modal-content1">
+                <i id="close" class="fa-regular fa-circle-xmark"></i>
+                    <div class="create">
+                        <div class="admin-info">
+                            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
+                                <div class="img-cir">
+                                    <img src="{% static 'images/admin.png' %}" alt="">
+                                    <input type="file">
+                                </div>
+                            
+                                <div class="user-info">
+                                    <div class="text-field">
+                                        <label for="Username">Username</label>
+                                        <input type="text"Name="username" id="Username">
+                                    </div>
+                                        
+                                    <div class="text-field">
+                                        <label for="Email">Email</label>
+                                        <input type="email"name="email" id="Email">
+                                    </div>
+
+                                    <div class="text-field">
+                                        <label for="password">password</label>
+                                        <input type="password"name="password" id="password">
+                                    </div>
+                                </div>
+                           
+                        </div>
+                        <button type="submit">Create</button>
+                    </form>
+                    </div>
+            </div>
+        </div>
+            <div class="infos">
+            <h4>User Management</h4>
+                <div class="right-button" >
+                    <button id="openModalBtn">Add Admin +</button>
+                </div>
+            </div>
+                    <div class="admins-container">
+                        
+
+                        {% for user in users%}
+                        <div class="admins">
+                            <div class="img-cir">
+                                <img src="{% static 'images/admin.png' %}" alt="">
+                            </div>
+                            <div class="admin-infos">
+                                <h1>{{user.username}}</h1>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        
+                        
+                    </div>
+    </div>
+
+
+    <div class="filter" style="display: none;">
+        <div class="new">
+            <h4>Filter</h4>
+            <div class="right-button">
+                <div class="dropdown-content" id="filterDropdown">
+                    
+                    <form class="form-box" method="POST">
+                        <select id="filters" name="filter"onchange="fetchData();">
+                            <option value="All">All</option>
+                            <option value="Gender">Gender</option>
+                            <option value="Type">Type</option>
+                            <option value="Age Range">Age Range</option>
+                            <option value="Social Status">Social Status</option>
+                            <option value="Marital Status">Marital Status</option>
+                            <option value="Educational Attainment">Educational Attainment</option>
+                        </select>
+                        <select name="filt-gender" id="filt-gender" onchange="fetchData();" style="display: none;">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <select name="filt-type" id="filt-type" onchange="fetchData();" style="display: none;">
+                            <option value="Student">Student</option>
+                            <option value="Community">Community</option>
+                        </select>
+                        <select name="filt-range" id="filt-range" onchange="fetchData();" style="display: none;">
+                            <option value="Child">Child</option>
+                            <option value="Teenagaer">Teenagaer</option>
+                            <option value="Young Adult">Young Adult</option>
+                            <option value="Senior Adult">Senior Adult</option>
+                        </select>
+                        <select name="filt-marital" id="filt-marital" onchange="fetchData();" style="display: none;">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divoved">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                        <select name="filt-status" id="filt-status" onchange="fetchData();" style="display: none;">
+                            <option value="Poor">Poor</option>
+                            <option value="Lower Middle">Lower Middle</option>
+                            <option value="Middle Middle">Middle Middle</option>
+                            <option value="Upper MIddle">Community</option>
+                            <option value="Upper Class">Upper Class</option>
+                            <option value="Rich">Rich</option>
+                        </select>
+                        <select name="filt-educ" id="filt-educ" onchange="fetchData();" style="display: none;">
+                            <option value="Primary">Primary</option>
+                            <option value="Secondary">Secondary</option>
+                            <option value="Tertiary">Tertiary</option>
+                            <option value="Vocational">Vocational</option>
+                        </select>
+                        
+                        <i class="fa-solid fa-filter"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+            <DIV class="infos">
+                <div class="filter-charts">
+                    <div class="filter-chart-box">
+
+                        <div class="filter-all-pies">
+
+                            <div class = "pie-container-custom">
+                                <canvas id="gender-pie" class="pie"></canvas>
+                                <h4>1</h4>
+                            </div>
+                            <div class = "pie-container-custom">
+                                <canvas id="type-pie" class="pie"></canvas> 
+                                <h4>2</h4>
+                            </div>
+                        </div>
+
+                        <div class="filter-bar">
+                        
+                                <canvas id="graph-bar1" class="bar-pie"></canvas>
+                        </div>
+
+                    </div>
+
+                    <div class="filter-chart-box2">
+                        <div class="filter-all-pies2">
+                            <div class="pies4">
+                                <div class="first">
+                                    <canvas id="status-polar" class="bar-pie"></canvas>
+                                </div>
+                                <div class="second">
+                                    <canvas id="range-polar" class="bar-pie"></canvas>
+                                </div>
+                                <div class="third">
+                                    <canvas id="Educ-polar" class="bar-pie"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="filter-bar2">
+                                <div class="fourth">
+                                    <canvas id="graph-bar2" class="filter-bar-pie"></canvas>
+                                </div>
+                                <div class="fifth">
+                                    <canvas id="graph-bar3" class="filter-bar-pie"></canvas>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+            </DIV>
+        </div>
+    </div>
+
+    <div class="files" style="display: none;">
+        <div class="new">
+            <h4>Files</h4> 
+            <div class="right-button">
+                <form action="#" method="post" id="searchbar">
+                    {%csrf_token%}
+                    <input type="text" name="search" id="search" oninput="fetchSearched();">
+                </form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+        
+        <div class="infos">
+
+            <div class="left-button" id="left-button" style="display: none;" >
+                <button onclick="goBack()">GO BACK</button>
+                <input type="text" id="search-prob" style="display:none;">
+                <div class="right-button">
+                    <input type="text" name="search-file" id="search-file" oninput="fetchSearchedFile();">
+                    <i id="magni" class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="folder-container" id="folder-container">
+                {% for folder in folders %}
+                <div class="file-box" onclick="replaceContainer('{{ folder.problem }}')">
+                    <div class="file-content">
+                        <h2 id="problems">{{ folder.problem }}</h2>
+                        {% if folder.count == 1 %}
+                            <p>{{ folder.count }} File</p>
+                            {% else %}
+                            <p>{{ folder.count }} Files</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="files-container" id="files-container" style="display: none;">
+                <div class="file-box">
+                    <div class="file-content">
+                        <h2>PROBLEM</h2>
+                            <p># Files</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="settings" style="display: none;">
+        <div class="new">
+            <h4>Settings</h4> 
+        </div>
+        <div class="infos">
+            <div class="categories">
+                <div class="categ" id="openModalBtn1">
+                    <H2>Gender <i class="fa-solid fa-gears"></i></H2>
+                </div>
+
+                <div id="modal2" class="modal1">
+                    <div class="modal-content1" id = "modal-content1">
+                        <i id="close1" class="fa-regular fa-circle-xmark"></i>
+                            <div class="gndr-tbl">
+                                <table id="gndr-table">
+                                    <tr>
+                                        <th>Genders</th>
+                                        <th>Settings</th>
+                                    </tr>
+                                    <tr>
+                                        {% if displayGenders %}
+                                            {% for gender in displayGenders %}
+                                                <tr>
+                                                    <td>{{ gender.gndr_name }}</td>
+                                                    <td style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                                                        <button onclick="editGender('{{ gender.pk }}')">Edit</button>
+                                                        <button onclick="deleteGender('{{ gender.pk }}')">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan="2">No genders found</td>
+                                            </tr>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+                                    
+                                    <div class="btns1">
+                                        <button class="btns" id="cancelBtn">CANCEL</button>
+                                        <input type="text" id="addGen">
+                                        <button onclick="addGender()">ADD</button>
+                                    </div>
+                     </div>
+                </div>
+                <div class="categ" id="openModalBtn2">
+                    <H2>Marital Status <i class="fa-solid fa-gears"></i></H2>
+                </div>
+                <div id="modal3" class="modal2">
+                    <div class="modal-content1" id = "modal-content1">
+                        <i id="close2" class="fa-regular fa-circle-xmark"></i>
+                            <div class="marital-tbl">
+                                <table id="mrtl-table">
+                                    <tr>
+                                        <th>Marital Status</th>
+                                        <th>Settings</th>
+                                    </tr>
+                                    <tr>
+                                        {% if displayMaritals %}
+                                            {% for marital in displayMaritals %}
+                                                <tr>
+                                                    <td>{{ marital.maritals_name }}</td>
+                                                    <td style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                                                        <button onclick="editMarital('{{ marital.pk }}')">Edit</button>
+                                                        <button onclick="deleteMarital('{{ marital.pk }}')">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan="2">No Marital Statuses found</td>
+                                            </tr>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btns1">
+                                <button class="btns" id="cancelBtn1">CANCEL</button>
+                                <input type="text" id="addMar">
+                                <button onclick="addMarital()">ADD</button>
+                            </div>
+                     </div>
+                </div>
+
+                <div class="categ" id="openModalBtn7">
+                    <H2>Ranges<i class="fa-solid fa-gears"></i></H2>
+                </div>
+                <div id="modal7" class="modal7">
+                    <div class="modal-content1" id = "modal-content1">
+                        <i id="close7" class="fa-regular fa-circle-xmark"></i>
+                            <div class="ranges-tbl">
+                                <table id="rngs-table">
+                                    <tr>
+                                        <th>Range Name</th>
+                                        <th>Range Details</th>
+                                        <th>Settings</th>
+                                    </tr>
+                                    <tr>
+                                        {% if displayRanges %}
+                                            {% for ranges in displayRanges %}
+                                                <tr>
+                                                    <td>{{ ranges.ranges_name }}</td>
+                                                    <td>{{ ranges.ranges_details }}</td>
+                                                    <td style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                                                        <button onclick="editRanges('{{ ranges.pk }}')">Edit</button>
+                                                        <button onclick="deleteRanges('{{ ranges.pk }}')">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan="3">No Ranges found</td>
+                                            </tr>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btns1">
+                                <button class="btns" id="cancelBtn7">CANCEL</button>
+                                <input type="text" id="addRange">
+                                <input type="text" id="addRangedet">
+                                <button onclick="addRanges()">ADD</button>
+                            </div>
+                     </div>
+                </div>
+            </div>
+
+            
+            <div class="categories">
+            <div class="categ" id="openModalBtn3">
+                    <H2>Types <i class="fa-solid fa-gears"></i></H2>
+                </div>
+                <div id="modal4" class="modal3">
+                    <div class="modal-content1" id = "modal-content1">
+                        <i id="close3" class="fa-regular fa-circle-xmark"></i>
+                            <div class="type-tbl">
+                                <table id="typ-table">
+                                    <tr>
+                                        <th>Types</th>
+                                        <th>Settings</th>
+                                    </tr>
+                                    <tr>
+                                        {% if displayTypes %}
+                                            {% for types in displayTypes %}
+                                                <tr>
+                                                    <td>{{ types.type_name }}</td>
+                                                    <td style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                                                        <button onclick="editType('{{ types.pk }}')">Edit</button>
+                                                        <button onclick="deleteType('{{ types.pk }}')">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan="2">No Types found</td>
+                                            </tr>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btns1">
+                                <button class="btns" id="cancelBtn2">CANCEL</button>
+                                <input type="text" id="addType">
+                                <button onclick="addType()">ADD</button>
+                            </div>
+                     </div>
+                </div>
+
+                <div class="categ" id="openModalBtn4">
+                    <H2>Educational Attainment <i class="fa-solid fa-gears"></i></H2>
+                </div>
+
+                <div id="modal5" class="modal4">
+                    <div class="modal-content1" id = "modal-content1">
+                        <i id="close4" class="fa-regular fa-circle-xmark"></i>
+                            <div class="Educ-tbl">
+                                <table id="dc-table">
+                                    <tr>
+                                        <th>Educational Attainment</th>
+                                        <th>Settings</th>
+                                    </tr>
+                                    <tr>
+                                        {% if displayEduc %}
+                                            {% for Educ in displayEduc %}
+                                                <tr>
+                                                    <td>{{ Educ.educ_name }}</td>
+                                                    <td style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                                                        <button onclick="editEduc('{{ Educ.pk }}')">Edit</button>
+                                                        <button onclick="deleteEduc('{{ Educ.pk }}')">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan="2">No Educational Attainments found</td>
+                                            </tr>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btns1">
+                                <button class="btns" id="cancelBtn3">CANCEL</button>
+                                <input type="text" id="addEduc">
+                                <button onclick="addEduc()">ADD</button>
+                            </div>
+                     </div>
+                </div>
+
+                <div class="categ" id="openModalBtn8">
+                    <H2>Social Statuses<i class="fa-solid fa-gears"></i></H2>
+                </div>
+                <div id="modal8" class="modal8">
+                    <div class="modal-content1" id = "modal-content1">
+                        <i id="close8" class="fa-regular fa-circle-xmark"></i>
+                            <div class="social-tbl">
+                                <table id="scl-table">
+                                    <tr>
+                                        <th>Estimated Income</th>
+                                        <th>Social Status</th>
+                                        <th>Settings</th>
+                                    </tr>
+                                    <tr>
+                                        {% if displaySocials %}
+                                            {% for socials in displaySocials %}
+                                                <tr>
+                                                    <td>{{ socials.est_income_details }}</td>
+                                                    <td>{{ socials.est_income_name }}</td>
+                                                    <td style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                                                        <button onclick="editSocial('{{ socials.pk }}')">Edit</button>
+                                                        <button onclick="deleteSocial('{{ socials.pk }}')">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td colspan="3">No Social Status found</td>
+                                            </tr>
+                                        {% endif %}
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btns1">
+                                <button class="btns" id="cancelBtn8">CANCEL</button>
+                                <input type="text" id="addEst">
+                                <input type="text" id="addSocial">
+                                <button onclick="addSocials()">ADD</button>
+                            </div>
+                     </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        
+    
+    </div>
+    
+
+
+</body>
+
+    {% comment %} pie resize {% endcomment %}
+    <script>
+        // Get a reference to the canvas element
+        var canvas = document.getElementById('chart1');
+    
+        // Function to resize the canvas
+        function resizeCanvas() {
+            // Set the canvas dimensions to match its parent container's width
+            canvas.width = canvas.parentElement.clientWidth;
+            // You might want to adjust the height proportionally or as needed
+            // canvas.height = canvas.parentElement.clientHeight;
+            // Update your chart or redraw if necessary
+        }
+    
+        // Initial call to resizeCanvas to set initial dimensions
+        resizeCanvas();
+    
+        // Add an event listener for the window resize event
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+    {% comment %} pie resize {% endcomment %}
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/admin1.js' %}"></script>
+    <script src="{% static 'js/admin.js' %}"></script>
+
+    <script>
+    
+        let addressBarChart;
+        let genderBarChart;
+        let typeBarChart;
+        let socialPieChart;
+        let rangePieChart;
+        let educPieChart;
+        let probBarChart;
+        let meansChart;
+    
+    function fetchFilter(formdata) {
+                const getForm = formdata
+    
+                    fetch('/filter/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                        },
+                        body: JSON.stringify(getForm)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const filMarital = data.marital_status;
+                        const filMaritalCounts = data.marital_status_counts;
+                        const filterGender = data.male_count;
+                        const filterGenderCounts = data.female_count;
+                        const filterType =  data.student_count;
+                        const filterTypeCounts = data.community_count;
+                        const filSocial = data.social_data;
+                        const filSocialCounts = data.social_data_counts;
+                        const filRange = data.range_data;
+                        const filRangeCounts = data.range_data_counts;
+                        const filEduc = data.educ_data;
+                        const filEducCounts = data.educ_data_counts;
+                        const filProblems= data.prob_data;
+                        const filProblemsCounts = data.prob_data_counts;
+                        const filMeans= data.means_data;
+                        const filMeansCounts = data.means_data_counts;
+                        
+    
+                    if (addressBarChart) {
+                        addressBarChart.destroy();
+                    }
+    
+                    const addressBarCanvas = document.getElementById('graph-bar1').getContext('2d');
+                    addressBarChart = new Chart(addressBarCanvas, {
+                        type: 'bar',
+                        data: {
+                            labels: filMarital,
+                            datasets: [{
+                                label: 'Marital Status Chart',
+                                data: filMaritalCounts,
+                                backgroundColor: ['#55e2e9']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            title: {
+                                display: true,
+                                text: 'Cases by Type'
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    stepSize: 1 // Ensure y-axis increments by 1 for count
+                                }
+                            }
+                        }
+                    });
+    
+                
+                    if (genderBarChart) {
+                        genderBarChart.destroy();
+                    }
+    
+                    const genderBarCanvas = document.getElementById('gender-pie').getContext('2d');
+                    genderBarChart = new Chart(genderBarCanvas, {
+                        type: 'pie', 
+                        data: {
+                            labels: filterGender,
+                            datasets: [{
+                                label: '# of Cases',
+                                data: filterGenderCounts,
+                                backgroundColor: [ '#abc32f','#607c3c','#ECECA3','#70AD47' ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+    
+                    if (typeBarChart) {
+                        typeBarChart.destroy();
+                    }
+    
+                    const typeBarCanvas = document.getElementById('type-pie').getContext('2d');
+                    typeBarChart = new Chart(typeBarCanvas, {
+                        type: 'pie', 
+                        data: {
+                            labels: filterType,
+                            datasets: [{
+                                label: '# of Cases',
+                                data: filterTypeCounts,
+                                backgroundColor: [ '#abc32f','#607c3c','#ECECA3','#70AD47' ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+    
+                    if (socialPieChart) {
+                        socialPieChart.destroy();
+                    }
+                
+                    const socialPieCanvas = document.getElementById('status-polar').getContext('2d');
+                    socialPieChart = new Chart(socialPieCanvas, {
+                        type: 'doughnut',
+                        data: {
+                            labels: filSocial,
+                            datasets: [{
+                                label: '# of Cases',
+                                data: filSocialCounts,
+                                backgroundColor: [ '#ECECA3','#70AD47', '#abc32f','#607c3c']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+    
+                    if (rangePieChart) {
+                        rangePieChart.destroy();
+                    }
+                
+                    const rangePieCanvas = document.getElementById('range-polar').getContext('2d');
+                    rangePieChart = new Chart(rangePieCanvas, {
+                        type: 'doughnut',
+                        data: {
+                            labels: filRange,
+                            datasets: [{
+                                label: '# of Cases',
+                                data: filRangeCounts,
+                                backgroundColor: [ '#ECECA3','#70AD47', '#abc32f','#607c3c']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+    
+                    if (educPieChart) {
+                        educPieChart.destroy();
+                    }
+                
+                    const educPieCanvas = document.getElementById('Educ-polar').getContext('2d');
+                    educPieChart = new Chart(educPieCanvas, {
+                        type: 'doughnut',
+                        data: {
+                            labels: filEduc,
+                            datasets: [{
+                                label: '# of Cases',
+                                data: filEducCounts,
+                                backgroundColor: [ '#ECECA3','#70AD47', '#abc32f','#607c3c']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+    
+                    if (probBarChart) {
+                        probBarChart.destroy();
+                    }
+    
+                    const probBarCanvas = document.getElementById('graph-bar2').getContext('2d');
+                    probBarChart = new Chart(probBarCanvas, {
+                        type: 'bar',
+                        data: {
+                            labels: filProblems,
+                            datasets: [{
+                                label: 'Problems Chart',
+                                data: filProblemsCounts,
+                                backgroundColor: ['#70AD47', '#ECECA3', '#abc32f', '#607c3c']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            title: {
+                                display: true,
+                                text: 'Cases by Type'
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    stepSize: 1 // Ensure y-axis increments by 1 for count
+                                }
+                            }
+                        }
+                    });
+    
+                    if (meansChart) {
+                        meansChart.destroy();
+                    }
+    
+                    const meansCanvas = document.getElementById('graph-bar3').getContext('2d');
+                    meansChart = new Chart(meansCanvas, {
+                        type: 'bar',
+                        data: {
+                            labels: filMeans,
+                            datasets: [{
+                                label: 'Means of Income Chart',
+                                data: filMeansCounts,
+                                backgroundColor: ['#70AD47', '#ECECA3', '#abc32f', '#607c3c']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            title: {
+                                display: true,
+                                text: 'Means of Income'
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    stepSize: 1 // Ensure y-axis increments by 1 for count
+                                }
+                            }
+                        }
+                    });
+                    
+                    
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+    }
+    
+    
+            const genders1 = ['Male', 'Female'];
+            const counts1 = [{{ male_count }}, {{ female_count }}]; 
+        
+            const ctx1 = document.getElementById('chart1').getContext('2d');
+            new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: genders1,
+                    datasets: [{
+                        label: '# of Cases',
+                        data: counts1,
+                        backgroundColor: [ '#ECECA3', '#70AD47', '#abc32f','#607c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+    
+            
+    
+    
+            const type = [
+                    {% for item in range_data %}
+                        '{{ item.range }}',
+                    {% endfor %}
+                ];
+    
+            const counts2 = [
+                {% for item in range_data %}
+                    {{ item.count }}, // Assuming item.count contains numerical count data
+                {% endfor %}
+            ];
+    
+            const ctx2 = document.getElementById('chart2').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut', // Corrected spelling of 'doughnut'
+                data: {
+                    labels: type,
+                    datasets: [{
+                        label: '# of Cases',
+                        data: counts2,
+                        backgroundColor: ['#70AD47', '#ECECA3', '#abc32f','#607c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+    
+            const classs = [
+                    {% for item in social_data %}
+                        '{{ item.estimated_income }}',
+                    {% endfor %}
+                ];
+    
+            const class_count = [
+                {% for item in social_data %}
+                    {{ item.count }}, // Assuming item.count contains numerical count data
+                {% endfor %}
+            ];
+    
+            const chart3 = document.getElementById('chart3').getContext('2d');
+            new Chart(chart3, {
+                type: 'bar', // Corrected spelling of 'doughnut'
+                data: {
+                    labels: classs,
+                    datasets: [{
+                        label: '# of Cases',
+                        data: class_count,
+                        backgroundColor: ['#70AD47', '#ECECA3', '#abc32f','#607c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+    
+            
+            const types = ['Community', 'Student'];
+            const counts4 = [{{ Community_count }}, {{ Student_count }}]; 
+        
+            const ctx4 = document.getElementById('chart4').getContext('2d');
+            new Chart(ctx4, {
+                type: 'polarArea',
+                data: {
+                    labels: types,
+                    datasets: [{
+                        label: '# of Cases',
+                        data: counts4,
+                        backgroundColor: ['#70AD47', '#ECECA3', '#abc32f','#607c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+    
+           
+            const addresses = [
+                {% for item in address_data %}
+                    '{{ item.address }}',
+                {% endfor %}
+            ];
+    
+            const counts3 = [
+                {% for item in address_data %}
+                    '{{ item.count }}',
+                {% endfor %}
+            ];
+    
+            const ctx3 = document.getElementById('address-bar').getContext('2d');
+            new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: addresses,
+                    datasets: [{
+                        label: 'Barangay Chart',
+                        data: counts3,
+                        backgroundColor: ['#70AD47', '#ECECA3', '#abc32f','#607c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    title: {
+                        display: true,
+                        text: 'Cases by Type'
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    
+
+</html>

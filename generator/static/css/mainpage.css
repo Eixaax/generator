@@ -1,0 +1,256 @@
+
+.main-container{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 85vh;
+}
+
+.student, .community{
+  
+    width: 25em; 
+    height: 25em; 
+    background-color: var(--first-color); 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid #0986419d;
+}
+
+.close:hover{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.close{
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1; 
+
+}
+
+
+
+.student:hover{
+    background-color: white;
+   
+}
+
+.community:hover{
+    background-color: white;
+    
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content1, .modal-content2{
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 90%;
+    max-height: 90%;
+    width: 90%; 
+    height: 90%;
+    overflow-y: auto; 
+
+}
+
+.thebutton{
+    margin-top: 5em;
+    text-align: center;
+}
+.genbutton {
+    text-align: center;
+}
+
+.headers{
+    text-align: center; 
+    color: #000000;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+.header2{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.headers2 input{
+    border:none;
+}
+
+.h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info {
+    padding: 0; 
+    margin: 0;
+}
+
+p{
+    margin-bottom: 0rem;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid black;
+    border-top: 0.5px solid black;
+    margin:1em;
+}
+
+.name h1{
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1em;
+}
+
+.client{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.full-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-info1{
+    display: flex;
+    flex-direction: row;
+    margin:1em;
+    justify-content: space-around;
+
+}
+
+.problemos{
+    display: flex;
+    flex-direction: row;
+    margin:1em;
+    justify-content: space-evenly;
+}
+
+.cinfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+label{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.client-info2{
+    display: flex;
+    flex-direction: column;
+    margin:1em;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+
+label{
+    margin: 1em;
+}
+
+.table{
+    margin-top: 2em;
+    margin-bottom: 20px;
+    overflow-x: auto; 
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;    
+  }
+  
+  th{
+    text-align: center;
+  }
+
+
+
+.info {
+    margin-bottom: 20px;
+}
+
+.name,
+.date,
+.sex,
+.status,
+.income,
+.estimated,
+.header2,
+.location {
+    display: flex;
+    flex-wrap: wrap; 
+    margin-bottom: 10px;
+}
+.label {
+    margin-right: 10px;
+}
+th {
+    text-align: center;
+}
+
+.profile{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.profile-pic{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .img{
+    height: 100%;
+    width: 100%;
+}
+
+.user-profile{
+    display: flex;
+    flex-direction: column;
+    gap:3em;
+}
+

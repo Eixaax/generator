@@ -1,0 +1,151 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title><style>table { border-collapse: collapse; width: 100%; } .h3 {font-family: 'Times New Roman', Times, serif; font-size: 2rem; color: black; text-align: center; } th, td { border: 1px solid black; padding: 8px; text-align: left; } th { text-align: center;} .headers {text-align: center;} .header2 {text-align: end; display: flex; justify-content: end; } </style></head><body>
+      <div class="headers" id="headers">
+          Republic of the Philippines <br>
+          Western Mindanao State University<br>
+          COLLEGE OF SOCIAL WORK AND COMMUNITY DEVELOPMENT<br>
+          Normal Rd, Baliwasan, Zamboanga City
+          <br>
+          <br>
+      </div>
+  
+      <div class="header2" id="header2">
+        <p>Date: <br>
+        Case no. </p>
+      </div>
+  
+      <div class="h3" id="h3">
+          SOCIAL CASE STUDY REPORT
+          <br>
+      </div>
+  
+      <div class="body" id="body">
+        <p>
+        A. Identifying Information<br>
+          <br>
+        Name of client :  <br> 
+        Date of birth : <br> 
+        Sex/Gender : <br> 
+        Marital status : <br> 
+        Educational attainment : <br> 
+        Means of income : <br> 
+        Estimated monthly income : <br>
+        Presenting problem : 
+      </p>
+        
+        <p>B. Family Composition</p>
+        <table>
+          <tbody><tr>
+            <th>Name</th>
+            <th>Relationship to Household</th>
+            <th>Birthdate</th>
+            <th>Sex/Gender</th>
+            <th>Marital Status</th>
+            <th>Educational Attainment</th>
+            <th>Employment</th>
+            <th>Estimated monthly income</th>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody></table>
+        <p>C. Background information </p>
+
+<p>Note: discussed the following in this part:<br>The client, client’s family, parents, children, siblings if applicable <br>Significant others (if important or related to client’s problem/situation <br>Client’s environment (neighborhood, community: physical, social characteristics, etc.)</p>
+
+<p>D. Underlying of Problem</p>
+
+<p>The causes of the problem, why it happens, what are the solutions executed by the client, what are the reasons why that particular solution was not effective. </p>
+
+<p>E. Helping Goals ( the “ends” desired example, it is write as to be achieved at the end of the helping relationship)</p>
+
+<p>At the end of the working relationship, the worker and client will be able to:</p>
+
+<p>1. Look for an alternative means of earning <br>2. Refer client for possible employment <br>3. Contact significant others that could temporarily assist the client in his or her current situation.</p>
+
+<p>F. Action Plan (the “means” to achieve the defined goals, example specific interventions, activities, task that have to be done to achieve the goals) follow the format below:<br></p>
+        <div contenteditable="true" class="plan" id="plan">
+          <p>
+            </p><p></p>
+          <p></p>
+        </div>
+        
+
+            <div class="assessment" id="assessment">
+              <p>
+                G. Assessment (narrative form)<br>
+
+                  1. Capacity to change on the part of the client<br>
+                  2. Hindering factors in achieving the goal<br>
+                  3. Facilitating factors that could help you and your client achieve your working goals. <br>
+                  4. Possible other problem based from the problem presented.<br>
+
+              </p>
+            </div>
+
+            <div class="recommendation" id="recommendation">
+              H. Recommendation (state further the needs for improvement in the working relationship)<br><br>
+              The worker therefore recommend the following: 
+              <p>
+                </p><p></p>
+              <p></p>
+              <br>
+            </div>
+
+            <div class="prep" id="prep">
+              <p>
+                Prepared by:<br>
+                natsu<br>
+              </p>
+            </div>
+            <button class="export" onclick="Export2Doc('content', 'test');">EXPORT</button>
+
+
+          </div>
+        </body></html>

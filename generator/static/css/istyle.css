@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+   
+}
+
+header{
+    position: absolute ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 2em;
+    color: rgb(32, 124, 17);
+    user-select: none;
+}
+
+.navigation .btnLogin-popup{
+   width: 90px;
+   height: 50;
+   background: transparent;
+   outline: none;
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 1.1em;
+   color: rgb(32, 124, 17);
+   font-weight: 500;
+   margin-left: 40px;
+   transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #dbdbdb9d;
+    color: #333;
+}
+
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(32, 124, 17);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 6px 15px;
+    transition: .5s;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation a:hover,
+.navigation a.active{
+    color: #333;
+}
+
+.navigation a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #dbdbdb9d;
+    border-radius: 30px;
+    z-index:-1 ;
+    transform: scale(0);
+    opacity: 0;
+    transition: height .5s ease;
+}
+
+.navigation a:hover span,
+.navigation a.active span
+{
+    transform: scale(1);
+    opacity: 1;
+
+}
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 30px rgba(0, 0, 0 .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    transform: scale(0);
+    transition: transform .5s ease, height .2 ease;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 520px;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+
+.wrapper .form-box.login{
+  transition: transform .18 ease;
+   transform: translateX(0);
+}
+
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register{
+    position: absolute;
+    transform: translateX(400px);
+    transition: none;
+}
+
+.wrapper.active .form-box.register{
+   
+    transition: transform .18s ease;
+    transform: translateX(-0);
+}
+
+
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2{
+    font-size: 2em;
+    text-align: center;
+    
+
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-weight: 500;
+    font-size: 1em;
+    color:  #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color:  #162938;
+    line-height: 57px;
+}
+
+.remember-forgot{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display:  flex;
+    justify-content: space-between;
+}
+
+
+.remember-forgot label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+
+.bg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+#text{
+    position: absolute;
+    font-size: 5em;
+    color: #acf1cf9d;
+    text-shadow: 2px 4px 5px black;
+
+}
+
+.bg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.bg img#gate-left {
+    transform: translateX(-282px);
+}
+
+
+.bg img#gate-right {
+    transform: translateX(300px);
+}
+
+
+.sec{
+    position: relative;
+    background-color: #d3d3d3;
+    padding: 30px 100px;
+
+}
+
+.sec h2{
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.sec p{
+    font-size: 1em;
+    color: rgb(12, 12, 12);
+    font-weight: 300;
+    text-align: justify;
+}
+.sec1{
+position: relative;
+background:url(../images/bg3.jpg)no-repeat;
+padding: 30px 100px;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+
+}
+.sec1 h2{
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-image: url(../images/merch1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }

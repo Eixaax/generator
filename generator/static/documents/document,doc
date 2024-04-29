@@ -1,0 +1,216 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title><style>table { border-collapse: collapse; width: 100%; } .h3 {font-family: 'Times New Roman', Times, serif; font-size: 2rem; color: black; text-align: center; } th, td { border: 1px solid black; padding: 8px; text-align: left; } th { text-align: center;} .headers {text-align: center;} .header2 {text-align: end; display: flex; justify-content: end; } </style></head><body>
+      <div class="headers" id="headers">
+          Republic of the Philippines <br>
+          Western Mindanao State University<br>
+          COLLEGE OF SOCIAL WORK AND COMMUNITY DEVELOPMENT<br>
+          Normal Rd, Baliwasan, Zamboanga City
+          <br>
+          <br>
+      </div>
+  
+      <div class="header2" id="header2">
+        <p>Date: 2024-04-28<br>
+        Case no. 9</p>
+      </div>
+  
+      <div class="h3" id="h3">
+          SOCIAL CASE STUDY REPORT
+          <br>
+      </div>
+  
+      <div class="body" id="body">
+        <p>
+        A. Identifying Information<br>
+          <br>
+        Name of client : Mary Jane F Cariage <br> 
+        Date of birth : 2003-07-13<br> 
+        Sex/Gender : Male<br> 
+        Marital status : Divorced<br> 
+        Educational attainment : Tertiary<br> 
+        Means of income : Engineering<br> 
+        Estimated monthly income : 30,000 - 70,000<br>
+        Presenting problem : insomnia
+      </p>
+        
+        <p>B. Family Composition</p>
+        <table>
+          <tbody><tr>
+            <th>Name</th>
+            <th>Relationship to Household</th>
+            <th>Birthdate</th>
+            <th>Sex/Gender</th>
+            <th>Marital Status</th>
+            <th>Educational Attainment</th>
+            <th>Employment</th>
+            <th>Estimated monthly income</th>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr contenteditable="true">
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody></table>
+        <p>C. Background information </p>
+
+<p>Note: discussed the following in this part:<br>The client, client’s family, parents, children, siblings if applicable <br>Significant others (if important or related to client’s problem/situation <br>Client’s environment (neighborhood, community: physical, social characteristics, etc.)</p>
+
+<p>D. Underlying of Problem</p>
+
+<p>The causes of the problem, why it happens, what are the solutions executed by the client, what are the reasons why that particular solution was not effective. </p>
+
+<p>E. Helping Goals ( the “ends” desired example, it is write as to be achieved at the end of the helping relationship)</p>
+
+<p>At the end of the working relationship, the worker and client will be able to:</p>
+
+<p>1. Look for an alternative means of earning <br>2. Refer client for possible employment <br>3. Contact significant others that could temporarily assist the client in his or her current situation.</p>
+
+<p>F. Action Plan (the “means” to achieve the defined goals, example specific interventions, activities, task that have to be done to achieve the goals) follow the format below:<br></p>
+        <div contenteditable="true" class="plan" id="plan">
+          <p>
+            </p><p>Associated Problem 1: Insomnia<br>Interventions: </p>
+
+<p>1. Practice good sleep hygiene: Establish a consistent sleep schedule, avoid electronics before bed, and create a relaxing sleep environment. </p>
+
+<p>2. Consider cognitive behavioral therapy (CBT): CBT can help you identify and change thoughts and behaviors that keep you awake. </p>
+
+<p>3. Explore supplemental options: Consult with a healthcare professional to discuss alternative supplements such as melatonin or magnesium to aid in quality sleep. </p>
+
+<p>Activities:<br>- Establish a consistent sleep schedule by going to bed and waking up at the same time every day. </p>
+
+<p>- Engage in regular physical activity during the day to feel more tired and mentally ready for sleep. </p>
+
+<p>- Create a pre-sleep routine, such as reading or meditation, to calm your mind before bed. </p>
+
+<p>Resources Needed: </p>
+
+<p>- Appointment scheduling with a mental health professional specializing in CBT for insomnia assistance. </p>
+
+<p>- Access to literature and resources that educate you about sleep hygiene and effective strategies. </p>
+
+<p>Expected Outcome: </p>
+
+<p>Experience faster and more sustained deep sleep throughout the night, resulting in improved energy and reduced stress throughout the day. </p>
+
+<p>Associated Problem 2: Lack of Energy<br>Interventions: </p>
+
+<p>1. Nutrition and dietary adjustments: Collaborate with a dietician to identify areas for nutritional improvement to boost energy. </p>
+
+<p>2. Increase daily activity: In conjunction with an appropriate workout routine, incorporate regular exercise into your daily routine to boost energy levels. </p>
+
+<p>3. Harness the power of "me" time: Create a balanced schedule that incorporates restorative activities like yoga, meditation, and socializing to enhance your overall well-being, which can provide more sustained energy throughout the day. </p>
+
+<p>Activities: </p>
+
+<p>- Cook more meals at home with a focus on balanced nutrition. </p>
+
+<p>- Schedule workouts at the beginning of the day to maximize energy retention throughout the day. </p>
+
+<p>- Dedicate 30 minutes daily to meditation, yoga, or socializing with friends to promote well-being and energy retention. </p>
+
+<p>Resources Needed: </p>
+
+<p>- In consultation with a dietician or nutritionist to pinpoint nutritional gaps and goals. </p>
+
+<p>- Access to a gym or fitness facility, or resources to participate in at-home workout routines. </p>
+
+<p>- Applications or materials to guide you through meditation, yoga, or other restorative activities. </p>
+
+<p>Expected Outcome: </p>
+
+<p>Feel more energized throughout the day, experience improved mood, and maintain increased productivity and motivation in your personal and professional life.</p>
+          <p></p>
+        </div>
+        
+
+            <div class="assessment" id="assessment">
+              <p>
+                G. Assessment (narrative form)<br>
+
+                  1. Capacity to change on the part of the client<br>
+                  2. Hindering factors in achieving the goal<br>
+                  3. Facilitating factors that could help you and your client achieve your working goals. <br>
+                  4. Possible other problem based from the problem presented.<br>
+
+              </p>
+            </div>
+
+            <div class="recommendation" id="recommendation">
+              H. Recommendation (state further the needs for improvement in the working relationship)<br><br>
+              The worker therefore recommend the following: 
+              <p>
+                </p><p>Here is a recommendation for an action plan for insomnia, lack of energy, and stress: </p>
+
+<p>1. Speak to a doctor, physician, or mental health professional: Insomnia can be linked to a larger issue such as depression and anxiety. It is important to understand your symptoms under the guidance of a professional who can offer diagnosis and treatment options, such as therapy and medication. </p>
+
+<p>2. Create a comfortable sleep environment and routine: Implementing healthy habits before bed can improve the quality of sleep. In preparation for bedtime, the bedroom should be cool, dark, and quiet. Make sure to avoid screens for at least 30 minutes before going to sleep. Consider taking a warm bath, reading, or practicing deep breathing exercises to calm your mind and prepare your body for sleep. Additionally, try to go to bed and wake up at the same time each day to establish a consistent sleep routine. </p>
+
+<p>3. Practice stress management and relaxation techniques: Finding healthy outlets for stress and engaging in practices that calm your mind can improve insomnia and lack of energy. Consider trying different stress-reduction strategies, such as meditation, deep breathing exercises, journaling, or mindfulness practices. Experiment with various techniques to find what works best for you. </p>
+
+<p>4. Exercise regularly: Exercise helps to relieve stress, increase energy levels, and improve the quality of sleep. Aim to engage in regular aerobic exercise, such as walking, jogging, swimming, or cycling, to boost your overall health and well-being. Try not to exercise too close to your bedtime as this may interfere with your ability to fall asleep. </p>
+
+<p>5. Evaluate nutrition and diet: Consuming a variety of healthy foods can improve mood and energy levels. Avoid consumption of stimulants, such as caffeine, and alcohol, especially close to bedtime. Try incorporating foods that contain magnesium, zinc, vitamin D, and omega-3 fatty acids into your diet, as these have been linked to better sleep. </p>
+
+<p>6. Reduce exposure to blue light: Blue light is produced by electronic devices such as phones, computers, and TVs. Reducing exposure to this type of light especially close to bedtime can improve sleep quality. You can adjust the settings on your devices to filter out blue light, or consider using glasses that protect against this type of light. </p>
+
+<p>7. Try Cognitive Behavioral Therapy (CBT): CBT is a type of therapy that can help you identify and change thought patterns and behaviors that cause you issues. CBT can be broken down into sessions that focus on different topics such as sleep hygiene education, sleep environment optimization, sleep scheduling, stress and anxiety reduction, relaxation training, and cognitive restructuring. </p>
+
+<p>This is not a complete treatment plan, but rather a starting point for addressing these issues. The recommendations provided in this action plan are intended to support your overall health and well-being. Consulting a medical professional should always be the first step in dealing with medical and mental health issues.</p>
+              <p></p>
+              <br>
+            </div>
+
+            <div class="prep" id="prep">
+              <p>
+                Prepared by:<br>
+                isa<br>
+              </p>
+            </div>
+              <button type="button" onclick="Export2Doc('content', 'test', '34');">EXPORT</button>
+              <input type="hidden" name="csrfmiddlewaretoken" value="064JEzKUffsPehjztALVIjHo6W5VsYJv1gJFeywbixrmbFoitJpabkDNN3BKGx5x">
+          </div>
+        </body></html>
